@@ -248,16 +248,13 @@ for entry in bs.find_all('div', class_='list'):
     del image_div.a['class']
     del image_div.img['height']
     del image_div.img['border']
-    image_div.img['width'] = '350'
+    image_div.img['width'] = '400'
 
     [m_title, m_body, m_tips] = message_div.find_all('div', recursive=False)
     m_title['class'] = 'entry-title'
     m_body.name = 'p'
     del m_body['class']
     del m_tips['class']
-    # m_tips.a['class'] = 'btn btn-small'
-    # m_tips.a.string = 'Read More'
-    # m_tips.ol.extract()
 
     f.write(str(entry))
 
