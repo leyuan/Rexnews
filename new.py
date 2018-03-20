@@ -1,10 +1,6 @@
 #encoding:UTF-8
 from bs4 import BeautifulSoup
 import urllib2
-import urllib
-import json
-import sys
-import re
 
 def create_header():
     return """
@@ -240,10 +236,9 @@ bs.prettify()
 
 lol = './lol.html'
 f = open(lol, "w")
-# f.write('<html>'+'<meta http-equiv="Content-Type" content="text/html; charset=utf-8">')
 f.write(create_header())
 
-for entry in bs.find_all('div',class_='list'):
+for entry in bs.find_all('div', class_='list'):
     entry['class'] = 'entry entry-small'
 
     [image_div, message_div] = entry.find_all('div', recursive=False)
@@ -253,7 +248,7 @@ for entry in bs.find_all('div',class_='list'):
     del image_div.a['class']
     del image_div.img['height']
     del image_div.img['border']
-    image_div.img['width'] = '519'
+    image_div.img['width'] = '350'
 
     [m_title, m_body, m_tips] = message_div.find_all('div', recursive=False)
     m_title['class'] = 'entry-title'
@@ -267,4 +262,3 @@ for entry in bs.find_all('div',class_='list'):
     f.write(str(entry))
 
 f.write(create_footer())
-# f.write('</html>')
