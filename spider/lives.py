@@ -1,6 +1,7 @@
 #encoding:UTF-8
 from bs4 import BeautifulSoup
 import urllib2
+
 def create_header():
     return """
     <!doctype html>
@@ -391,7 +392,7 @@ def getPage(url):
     response=urllib2.urlopen(request)
     return response.read()
 
-url="http://www.jinse.com/lives"
+url = "http://www.jinse.com/lives"
 
 result=getPage(url)
 bs=BeautifulSoup(result, "html.parser")
@@ -418,9 +419,9 @@ for entry in bs.find_all('div',class_='live-info'):
 
     for link in a_s:
         link["target"] = "_blank"
-        link["href"] = entry.a["href"]
+        link["href"] = "http://www.jinse.com" + entry.a["href"]
 
-    grid.h5.string = title
+    grid.h5.a.string = title
     grid.p.string = message
     f.write(str(grid))
 
