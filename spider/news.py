@@ -18,7 +18,7 @@ result = getPage(url)
 bs = BeautifulSoup(result, "html.parser")
 bs.prettify()
 
-news_html = '../news.html'
+news_html = 'news.html'
 f = open(news_html, "w")
 
 f.write(helper.create_header())
