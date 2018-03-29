@@ -1,0 +1,19 @@
+{
+  "name": "rexnews",
+  "version": "1.0.0",
+  "description": "Yooo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leyuan/Rexnews.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leyuan/Rexnews/issues"
+  },
+  "homepage": "https://github.com/leyuan/Rexnews#readme"
+}
