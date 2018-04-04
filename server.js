@@ -9,13 +9,17 @@ app.use(bodyParser.json());
 
 var port = process.env.PORT || 3000;        // set our port
 
+var options = {
+    pythonPath: "D:home\\Python27\\python.exe",
+  };
+
 // ROUTES FOR OUR API
 var router = express.Router();
 
 app.use('/api', router);
 router.get('/', function(req, res) {
 
-    PythonShell.run('spider/lives.py', function (err) {
+    PythonShell.run('spider/lives.py', options, function (err) {
         if (err) res.json(JSON.stringify(err));
         console.log('finished');
         res.json({ message: 'hooray! Finished running for Lives page' });
