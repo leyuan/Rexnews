@@ -15,14 +15,13 @@ var router = express.Router();
 app.use('/api', router);
 router.get('/', function(req, res) {
     res.json({ message: 'hooray! welcome to our api!' });
-    PythonShell.run('spider/news.py', function (err) {
+    PythonShell.run('spider/lives.py', function (err) {
         if (err) throw err;
         console.log('finished');
     });
 });
 
 app.use(express.static('public'));
-app.use(express.static('css'));
 
 app.listen(port);
 console.log('Magic happens on port ' + port);
