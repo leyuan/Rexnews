@@ -14,10 +14,11 @@ var router = express.Router();
 
 app.use('/api', router);
 router.get('/', function(req, res) {
-    res.json({ message: 'hooray! welcome to our api!' });
+
     PythonShell.run('spider/lives.py', function (err) {
         if (err) throw err;
         console.log('finished');
+        res.json({ message: 'hooray! Finished running for Lives page' });
     });
 });
 
