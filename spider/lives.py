@@ -402,7 +402,7 @@ bs=BeautifulSoup(result, "html.parser")
 bs.prettify()
 [s.extract() for s in bs(['span', 'new'])]
 
-txt = 'lives.html'
+txt = 'public/lives.html'
 f = open(txt, "w")
 f.write(create_header())
 

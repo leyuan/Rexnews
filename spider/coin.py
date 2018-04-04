@@ -401,7 +401,7 @@ bs=BeautifulSoup(result, "html.parser")
 bs.prettify()
 [s.extract() for s in bs(['span', 'new'])]
 
-txt='./coins.html'
+txt='./public/coins.html'
 f = open(txt, "w")
 
 f.write(create_header())
