@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 var port = process.env.PORT || 3000;        // set our port
 
 var options = {
-    pythonPath: "D:\home\Python27\python.exe",
+    pythonPath: "D:home\\Python27\\python.exe",
 };
 
 // ROUTES FOR OUR API
