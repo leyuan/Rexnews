@@ -1,7 +1,7 @@
 var PythonShell = require('python-shell');
 
 var options = {
-    pythonPath: "D:home\\Python27\\python.exe",
+    pythonPath: "D:\\home\\Python27\\python.exe",
 };
 
 PythonShell.run('spider/hello.py', options, function (err) {
