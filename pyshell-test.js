@@ -1,15 +1,11 @@
 var PythonShell = require('python-shell');
 
-var options = {};
-
-if(port !== 3000) {
-    options = {
-        pythonPath: "D:\\home\\Python27\\python.exe",
-    };
-}
+options = {
+    pythonPath: "D:\\home\\Python27\\python.exe",
+};
 
 PythonShell.run('spider/hello.py', options, function (err) {
-    if (err) res.json(JSON.stringify(err));
-    console.log('finished');
-    res.json({ message: 'hooray! Finished running for Lives page' });
+    if (err) console.log(err);
+
+    console.log("Done");
 });
