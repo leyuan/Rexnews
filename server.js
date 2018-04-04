@@ -22,6 +22,7 @@ router.get('/', function(req, res) {
 });
 
 app.use(express.static('public'));
+app.use(express.static('css'));
 
 app.listen(port);
 console.log('Magic happens on port ' + port);
