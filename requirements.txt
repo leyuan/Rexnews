@@ -1,0 +1,2 @@
+--find-links wheelhouse
+beautifulsoup4==4.6.0
