@@ -239,6 +239,8 @@ bs.prettify()
 news_html = 'public/news.html'
 f = open(news_html, "w")
 
+print("In the middel")
+
 f.write(create_header())
 
 for entry in bs.find_all('div', class_='list'):
