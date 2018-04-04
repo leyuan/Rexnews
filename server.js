@@ -15,8 +15,8 @@ var router = express.Router();
 app.use('/api', router);
 router.get('/', function(req, res) {
 
-    PythonShell.run('spider/lives.py', function (err) {
-        if (err) throw err;
+    PythonShell.run('spider/live.py', function (err) {
+        if (err) res.json(JSON.stringify(err));
         console.log('finished');
         res.json({ message: 'hooray! Finished running for Lives page' });
     });
