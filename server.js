@@ -23,14 +23,25 @@ var router = express.Router();
 app.use('/api', router);
 router.get('/', function(req, res) {
 
-    PythonShell.run('spider/lives.py', options, function (err) {
-        if (err) res.json(JSON.stringify(err));
-        console.log('finished');
-        res.json({ message: 'hooray! Finished running for Lives page' });
-    });
+    crawlPage('spider/coin.py');
+    crawlPage('spider/news.py');
+    crawlPage('spider/lives.py');
+    // PythonShell.run('spider/lives.py', options, function (err) {
+    //     if (err) res.json(JSON.stringify(err));
+    //     console.log('finished');
+    //     res.json({ message: 'hooray! Finished running for Lives page' });
+    // });
 });
 
 app.use(express.static('public'));
 
 app.listen(port);
 console.log('Magic happens on port ' + port);
+
+function crawlPage(path) {
+    PythonShell.run(path, options, function (err) {
+        if (err) res.json(JSON.stringify(err));
+        console.log('Finished');
+        res.json({ message: 'hooray! Finished crawling for' + path });
+    });
+}

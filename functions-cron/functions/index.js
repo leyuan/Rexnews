@@ -10,8 +10,8 @@ const http = require("http");
 exports.crawl = functions.pubsub.topic('crawl').onPublish((event) => {
 
   const url = {
-    host: 'ualberta.ca',
-    path: '/'
+    host: 'rexnews.azurewebsites.net',
+    path: '/api'
   };
 
   http.get(url, res => {
