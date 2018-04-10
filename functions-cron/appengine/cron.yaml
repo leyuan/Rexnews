@@ -1,4 +1,4 @@
-# cron:
+cron:
 # - description: Push a "tick" onto pubsub every hour
 #   url: /publish/hourly-tick
 #   schedule: every 1 hours
@@ -13,4 +13,4 @@
 
 - description: Crawl the pages every hour
   url: /publish/crawl
-  schedule: every 1 hours
+  schedule: every 6 hours
